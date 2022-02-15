@@ -43,24 +43,22 @@ The challenge is to create RESTful API for Tic Tac Toe game in python with DRF.
 ### API's
 * All api's are restricted to the authenticated users
 * Response contains two fields: Message and HTTP status code
-* [] Move API:
+* Move API:
   * Method: POST
   * Endpoint: '/api/move/<row>/<column>'
-* [] Check Game Updates API
+* Check Game Updates API
   * Method: GET
   * Endpoint: '/api/move'
-* [] High Score API
+* High Score API
   * Method: GET
   * Endpoint: '/api/get_high_score_list'
 
-### How to run?
-
+### How to run
 * git clone the repository: git clone <url>
 * Build the docker image with all dependencies installed: docker build -t image_name:tag_name .
 * To run the image: docker run image_name:tag_name
   
-### Improvements - TODO?
-
+### Improvements - TODO
 * Tests need to be implemented for all functionality
 * Code can be more optimized to make views skinny
 * Signals can be implemented to check game/team status
