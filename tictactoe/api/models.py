@@ -2,7 +2,6 @@ from django.db import models
 from django.core.exceptions import ValidationError
 from django.core.validators import MinValueValidator
 from django.utils.translation import gettext_lazy as _
-from crum import get_current_user
 import pickle
 import base64
 import numpy as np
@@ -54,9 +53,6 @@ class Game(models.Model):
     
     def save(self, *args, **kwargs):
         if self.pk is None:
-            current_user = get_current_user()
-            if current_user:
-                self.created_by = current_user
             # transform numpy array to python byte using pickle dumps, then encoded by base64
             np_array = np.empty((3,3), dtype = str)
             np_bytes = pickle.dumps(np_array)
